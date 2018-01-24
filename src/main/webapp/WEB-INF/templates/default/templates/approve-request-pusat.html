@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-pusat">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            List Request ATK Cabang Jakarta
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll" /> Check All</th>
+                                <th>No</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" id="1" /></td>
+                                <td>1</td>
+                                <td>Stampel Operational</td>
+                                <td>5</td>
+                                <td><span class="label label-danger">Not Available</span></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="2" /></td>
+                                <td>2</td>
+                                <td>Map Putih</td>
+                                <td>5</td>
+                                <td><span class="label label-success">Available</span></td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>No</th>
+                                <th>Na Barang</th>
+                                <th>Jumlah</th>
+                                <th>Status</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+                <div class="col-sm-12">
+                    <a type="button" class="btn btn-info pull-right" id="addDataBarang" >Proses</a>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    $(function() {
+        $('#tableBarang').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function() {
+
+
+        var counter = 1;
+
+        $('#addDataBarang').on( 'click', function () {
+            var inputNamaBarang = document.getElementById("inputNamaBarang").value;
+            var inputJumlahBarang = document.getElementById("inputJumlahBarang").value;
+            var inputHargaSatuan = document.getElementById("inputHargaSatuan").value;
+            var totalHarga = inputHargaSatuan*inputJumlahBarang;
+            // console.log("totalHarga "+2*2);
+            var t = $('#tableBarang').DataTable();
+            t.row.add( [
+                counter   ,
+                inputNamaBarang,
+                inputJumlahBarang,
+                inputHargaSatuan,
+                totalHarga
+            ] ).draw( false );
+            counter++;
+        } );
+
+    } );
+</script>
+
+
+

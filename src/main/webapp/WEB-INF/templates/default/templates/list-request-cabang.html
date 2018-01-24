@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-cabang">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            List Request ATK dan Printing
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Cabang</th>
+                                <th>No Request</th>
+                                <th>Mata Anggaran</th>
+                                <th>Jumlah Item</th>
+                                <th>Total Harga</th>
+                                <th>User</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Jakarta</td>
+                                <td>NR1</td>
+                                <td>Anggaran 1</td>
+                                <td>5</td>
+                                <td>Rp 20.000.000,00</td>
+                                <td>Dimas</td>
+                                <td>23 Agustus 2017</td>
+                                <td>Request</td>
+                                <td><a th:href="@{detail-request-cabang}" class="btn btn-app">
+                                    <i class="fa fa-edit"></i> Detail
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <!--<tfoot>-->
+                            <!--<tr>-->
+                                <!--<th>No</th>-->
+                                <!--<th>Cabang</th>-->
+                                <!--<th>No Request</th>-->
+                                <!--<th>Anggaran</th>-->
+                                <!--<th>Jumlah Item</th>-->
+                                <!--<th>Status</th>-->
+                                <!--<th>Detail</th>-->
+                            <!--</tr>-->
+                            <!--</tfoot>-->
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <br/>
+                <br/>
+
+                <!--  <div class="col-sm-8">
+                     <a href="index.html" type="button" class="btn btn-info " id="addDataBarang" >Reject</a>
+                     <a type="button" class="btn btn-info " id="addDataBarang" >Approve</a>
+                 </div> -->
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+    <!-- /.content -->
+    </section>
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    $(function() {
+        $('#tableBarang').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+
+
+

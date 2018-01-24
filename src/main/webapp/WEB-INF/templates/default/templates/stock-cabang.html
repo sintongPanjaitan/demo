@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-cabang">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            List Request ATK Cabang Jakarta
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Id Barang</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BC0001</td>
+                                <td>Aplikasi Tabungan</td>
+                                <td>1500</td>
+                                <td>Rp600,00/lembar</td>
+                                <td>Rp900.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>BC0002</td>
+                                <td>Slip Penarikan</td>
+                                <td>20</td>
+                                <td>Rp16.500,00/buku</td>
+                                <td>Rp330.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>BC0003</td>
+                                <td>Slip Setoran</td>
+                                <td>20</td>
+                                <td>Rp16.500,00/buku</td>
+                                <td>Rp330.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>BC0004</td>
+                                <td>Aplikasi Pemindahbukuan</td>
+                                <td>20</td>
+                                <td>Rp8.500,00/buku</td>
+                                <td>Rp170.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>BC0005</td>
+                                <td>Aplikasi Transfer</td>
+                                <td>10</td>
+                                <td>Rp14.000,00/buku</td>
+                                <td>Rp140.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>BC0006</td>
+                                <td>Form Aplikasi Kredit Pensiunan</td>
+                                <td>500</td>
+                                <td>Rp950,00/lembar</td>
+                                <td>Rp475.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>BC0007</td>
+                                <td>Form Aplikasi Kredit Pensiunan Serba Mantap</td>
+                                <td>500</td>
+                                <td>Rp950,00/lembar</td>
+                                <td>Rp475.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>BC0008</td>
+                                <td>Form Aplikasi Kredit Mikro</td>
+                                <td>200</td>
+                                <td>Rp950,00/lembar</td>
+                                <td>Rp190.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>BC0009</td>
+                                <td>Form Aplikasi Kredit Retail</td>
+                                <td>100</td>
+                                <td>Rp950,00/lembar</td>
+                                <td>Rp95.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>BC0010</td>
+                                <td>Broaur Tabungan Si Mantap Berjangka</td>
+                                <td>100</td>
+                                <td>Rp350,00/lembar</td>
+                                <td>Rp5.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>BC0011</td>
+                                <td>Broaur Pensiunan</td>
+                                <td>500</td>
+                                <td>Rp350,00/lembar</td>
+                                <td>Rp175.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>BC0012</td>
+                                <td>Broaur Serbaguna Mantap</td>
+                                <td>100</td>
+                                <td>Rp350,00/lembar</td>
+                                <td>Rp5.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>BC0013</td>
+                                <td>Kertas Kop Hal 1 dan 2</td>
+                                <td>4</td>
+                                <td>Rp270,00/lembar</td>
+                                <td>Rp1.080.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>BC0014</td>
+                                <td>Buku Tabungan Tabunganku No 124026-124925</td>
+                                <td>500</td>
+                                <td>Rp4.500,00/buku</td>
+                                <td>Rp2.250.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>BC0014</td>
+                                <td>Buku Tabungan Simanatap Gold No 124351-214850</td>
+                                <td>500</td>
+                                <td>Rp3.800,00/buku</td>
+                                <td>Rp2.900.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>BC0015</td>
+                                <td>Buku Tabungan Simanatap Pensiunan No 94351-94850</td>
+                                <td>500</td>
+                                <td>Rp3.800,00/buku</td>
+                                <td>Rp1.900.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>BC0016</td>
+                                <td>X-Benner Pensiunan</td>
+                                <td>1</td>
+                                <td>Rp50.000,00/biji</td>
+                                <td>Rp50.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>BC0017</td>
+                                <td>X-Benner Kredit Serba Guna Mantap</td>
+                                <td>1</td>
+                                <td>Rp50.000,00/biji</td>
+                                <td>Rp50.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>BC0018</td>
+                                <td>Aplikasi Tsb</td>
+                                <td>1000</td>
+                                <td>Rp600,00/lembar</td>
+                                <td>Rp600.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>BC0019</td>
+                                <td>Amplop Kaca Bank Mantap</td>
+                                <td>1</td>
+                                <td>Rp125.000,00/box</td>
+                                <td>Rp125.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>BC0020</td>
+                                <td>Amplop Non Kaca Bank Mantap</td>
+                                <td>1</td>
+                                <td>Rp125.000,00/box</td>
+                                <td>Rp125.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>BC0021</td>
+                                <td>Denominasi</td>
+                                <td>20</td>
+                                <td>Rp25.000,00/buku</td>
+                                <td>Rp500.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td>BC0022</td>
+                                <td>Aplikasi Umum</td>
+                                <td>10</td>
+                                <td>Rp16.500,00/buku</td>
+                                <td>Rp165.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td>BC0023</td>
+                                <td>Kwitansi Biaya</td>
+                                <td>10</td>
+                                <td>Rp20.000,00/buku</td>
+                                <td>Rp200.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td>BC0024</td>
+                                <td>Spectroline</td>
+                                <td>2</td>
+                                <td>Rp105.000,00/kotak</td>
+                                <td>Rp210.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>BC0025</td>
+                                <td>Tali Uang 1000</td>
+                                <td>500</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp50.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td>BC0025</td>
+                                <td>Tali Uang 2 ribu</td>
+                                <td>1000</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp100.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>BC0026</td>
+                                <td>Tali Uang 5 ribu</td>
+                                <td>400</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp40.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td>BC0027</td>
+                                <td>Tali Uang 10 ribu</td>
+                                <td>1000</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp100.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>BC0028</td>
+                                <td>Tali Uang 20 ribu</td>
+                                <td>1000</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp100.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>BC0029</td>
+                                <td>Tali Uang 50 ribu</td>
+                                <td>1000</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp100.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>BC0030</td>
+                                <td>Tali Uang 100 ribu</td>
+                                <td>1000</td>
+                                <td>Rp100,00/lembar</td>
+                                <td>Rp100.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td>BC0031</td>
+                                <td>Bilyet Tsb No. 45001-48250</td>
+                                <td>5</td>
+                                <td>Rp50.000,00/buku</td>
+                                <td>Rp250.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td>BC0032</td>
+                                <td>Stampel Operational</td>
+                                <td>18</td>
+                                <td>Rp1.140.000,00/box</td>
+                                <td>Rp20.520.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td>BC0033</td>
+                                <td>Map Putih</td>
+                                <td>100</td>
+                                <td>Rp3.500,00/lembar</td>
+                                <td>Rp350.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td>BC0034</td>
+                                <td>Map Pensiunan</td>
+                                <td>100</td>
+                                <td>Rp7.500,00/lembar</td>
+                                <td>Rp750.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td>BC0035</td>
+                                <td>Map Kuning Bank Mantap</td>
+                                <td>100</td>
+                                <td>Rp5.355,00/lembar</td>
+                                <td>Rp535.500,00</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td>BC0036</td>
+                                <td>Amplop Surat Coklat Besar</td>
+                                <td>50</td>
+                                <td>Rp3.200,00/lembar</td>
+                                <td>Rp160.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>37</td>
+                                <td>BC0037</td>
+                                <td>Amplop Pensiunan</td>
+                                <td>100</td>
+                                <td>Rp3.500,00/lembar</td>
+                                <td>Rp350.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>38</td>
+                                <td>BC0038</td>
+                                <td>Obligo Biaya</td>
+                                <td>100</td>
+                                <td>Rp750,00/lembar</td>
+                                <td>Rp75.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>39</td>
+                                <td>BC0039</td>
+                                <td>Aplikasi U</td>
+                                <td>10</td>
+                                <td>Rp22.500,00/lembar</td>
+                                <td>Rp225.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td>BC0040</td>
+                                <td>Aplikasi Keluhan Nasabah</td>
+                                <td>2</td>
+                                <td>Rp2.000,00/buku</td>
+                                <td>Rp4.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>41</td>
+                                <td>BC0041</td>
+                                <td>Plastic Deposito</td>
+                                <td>50</td>
+                                <td>Rp700,00/buku</td>
+                                <td>Rp35.000,00</td>
+                            </tr>
+                            <tr>
+                                <td>42</td>
+                                <td>BC0042</td>
+                                <td>Kwitansi Pembayaran Pensiunan</td>
+                                <td>1</td>
+                                <td>Rp105.750,00/buku</td>
+                                <td>Rp105.750,00</td>
+                            </tr>
+                            </tbody>
+                            <!--<tfoot>-->
+                            <!--<tr>-->
+                                <!--<th>No</th>-->
+                                <!--<th>Id Barang</th>-->
+                                <!--<th>Nama Barang</th>-->
+                                <!--<th>Jumlah</th>-->
+                                <!--<th>Harga Satuan</th>-->
+                                <!--<th>Total Harga</th>-->
+                            <!--</tr>-->
+                            <!--</tfoot>-->
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+<!-- excel -->
+<script th:src="@{/assets/template/components/datatable/jquery-1.12.4.js}"></script>
+<script th:src="@{/assets/template/components/datatable/1.10.16/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/buttons/1.5.0/js/dataTables.buttons.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/buttons/1.5.0/js/buttons.flash.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/ajax/libs/jszip/3.1.3/jszip.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/ajax/libs/pdfmake/0.1.32/pdfmake.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/ajax/libs/pdfmake/0.1.32/vfs_fonts.js}"></script>
+<script th:src="@{/assets/template/components/datatable/buttons/1.5.0/js/buttons.html5.min.js}"></script>
+<script th:src="@{/assets/template/components/datatable/buttons/1.5.0/js/buttons.print.min.js}"></script>
+<script>
+//    $(function() {
+//        $('#tableBarang').DataTable( {
+//            "order": [[ 3, "asc" ]]
+//        } );
+//        $('#example2').DataTable({
+//            'paging': true,
+//            'lengthChange': false,
+//            'searching': false,
+//            'ordering': true,
+//            'info': true,
+//            'autoWidth': false
+//        })
+//    })
+    $(function () {
+        $('#tableBarang').DataTable( {
+            "order": [[ 3, "asc" ]],
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        } );
+        $('#example2').DataTable({
+            // "order": [[ 3, "desc" ]],
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+
+
+        var counter = 1;
+
+        $('#addDataBarang').on( 'click', function () {
+            var inputNamaBarang = document.getElementById("inputNamaBarang").value;
+            var inputJumlahBarang = document.getElementById("inputJumlahBarang").value;
+            var hargaSatuan = '100/lembar';
+            var totalHarga = inputJumlahBarang*100;
+            // console.log("totalHarga "+2*2);
+            var t = $('#tableBarang').DataTable();
+            t.row.add( [
+                counter   ,
+                inputNamaBarang,
+                inputJumlahBarang,
+                hargaSatuan,
+                totalHarga
+            ] ).draw( false );
+            counter++;
+        } );
+
+    } );
+</script>
+
+
+

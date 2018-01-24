@@ -1,0 +1,95 @@
+spring:
+  profiles:
+    active: development
+  main:
+    banner-mode: log
+#  thymeleaf:
+#    cache: false
+#    mode: HTML # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
+#    prefix: classpath:/templates/default/ # Prefix that gets prepended to view names when building a URL.
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    database: default
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+
+  hikari:
+    #60 sec
+    connection-timeout: 60000
+    maximum-pool-size: 5
+  http:
+    multipart:
+    max-file-size : 10MB
+    max-request-size : 10MB
+#    template-loader-path: classpath:/templates/,classpath:/templates/default/,classpath:/webapp/templates/default/,classpath:/webapp/WEB-INF/templates/default/,/WEB-INF/templates/default/
+
+#  datasource:
+#    url: jdbc:sqlserver://localhost;databaseName=EAUTHENTICATION
+#    username: sa
+#    password: password
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jackson:
+    default-property-inclusion: non_empty
+
+application:
+  message: Hello, Andy.
+  thymeleaf:
+    themes: default
+    skin: default
+
+logging:
+  level:
+    .: info
+    org:
+      hibernate:
+        SQL: info
+        type:
+          .: info
+          descriptor:
+            sql: info
+    id:
+      myindo:
+        .: info
+        bankmantap: info
+
+---
+
+spring:
+  profiles: production
+server:
+  port: 0
+
+---
+
+spring:
+  profiles: staging
+server:
+  port: 8184
+
+---
+
+spring:
+  profiles: development
+server:
+  port: 8181
+logging:
+  level:
+    .: info
+    org.springframework: info
+    id.myindo: info
+    org.hibernate: info
+
+---
+spring:
+  profiles: localhost
+server:
+  port: 8182
+logging:
+  level:
+    .: info
+    org.springframework: info
+    id.myindo: info
+    org.hibernate: info

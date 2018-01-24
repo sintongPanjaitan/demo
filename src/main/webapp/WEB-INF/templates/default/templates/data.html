@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+<head>
+    <title>Users</title>
+</head>
+<body>
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Data
+            <small>Data</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <p>conten dashboard</p>
+            </div>
+        </div>
+    </section>
+</section>
+<footer>
+    <p layout:fragment="custom-footer">footer dasboard</p>
+</footer>
+</body>
+</html>

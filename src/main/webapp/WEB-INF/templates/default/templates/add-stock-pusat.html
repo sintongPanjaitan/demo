@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-pusat">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Add Stock ATK & Printing
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+
+        <form class="form-horizontal">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputNamaBarang" class="col-sm-2 control-label">Nama Barang</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" list="listNamaBarang" id="inputNamaBarang" name="inputNamaBarang" placeholder="Nama Barang" value="" />
+                        <datalist id="listNamaBarang">
+                            <option value="Map Putih" >K1</option>
+                            <option value="Stampel Operational" >K2</option>
+                            <option value="Amplop Pensiunan" >K3</option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputJumlahBarang" class="col-sm-2 control-label">Jumlah Barang</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control" list="listJumlahBarang" id="inputJumlahBarang" name="inputJumlahBarang" placeholder="Jumlah Barang" value="" />
+                        <datalist id="listJumlahBarang">
+                            <option value="5" />
+                            <option value="10" />
+                            <option value="15" />
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputHargaSatuan" class="col-sm-2 control-label">Harga Satuan</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control" list="listHargaSatuan" id="inputHargaSatuan" name="inputJumlahBarang" placeholder="Harga Satuan" value="" />
+                        <datalist id="listHargaSatuan">
+                            <option value="100" />
+                            <option value="600" />
+                            <option value="1000" />
+                        </datalist>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.box-footer -->
+        </form>
+
+        <div class="col-sm-9">
+            <button class="btn btn-info pull-right" id="addDataBarang" >Add</button>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>Stampel Operational</td>
+                                <td>5</td>
+                            </tr> -->
+                            </tbody>
+                            <!--<tfoot>-->
+                            <!--<tr>-->
+                                <!--<th>No</th>-->
+                                <!--<th>Na Barang</th>-->
+                                <!--<th>Jumlah</th>-->
+                                <!--<th>Harga Satuan</th>-->
+                                <!--<th>Total Harga</th>-->
+                            <!--</tr>-->
+                            <!--</tfoot>-->
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="col-sm-12">
+                    <a href="index.html" type="Submit" class="btn btn-info pull-right" id="submitDataBarang" >Submit</a>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+    $(function() {
+        $('#tableBarang').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+
+<script>
+    $(document).ready(function() {
+
+
+        var counter = 1;
+
+        $('#addDataBarang').on( 'click', function () {
+            var inputNamaBarang = document.getElementById("inputNamaBarang").value;
+            var inputJumlahBarang = document.getElementById("inputJumlahBarang").value;
+            var inputHargaSatuan = document.getElementById("inputHargaSatuan").value;
+            var totalHarga = inputHargaSatuan*inputJumlahBarang;
+            // console.log("totalHarga "+2*2);
+            var t = $('#tableBarang').DataTable();
+            t.row.add( [
+                counter   ,
+                inputNamaBarang,
+                inputJumlahBarang,
+                inputHargaSatuan,
+                totalHarga
+            ] ).draw( false );
+            counter++;
+        } );
+
+    } );
+</script>
+
+
+

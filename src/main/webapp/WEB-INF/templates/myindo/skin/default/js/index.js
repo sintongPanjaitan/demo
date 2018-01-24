@@ -1,0 +1,3 @@
+/*
+template myindo skin default js index.js
+ */

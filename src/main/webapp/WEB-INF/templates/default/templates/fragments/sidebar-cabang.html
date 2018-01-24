@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" th:fragment="left" >
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>Alexander Pierce</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." />
+                    <span class="input-group-btn">
+                     <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                     </button>
+                     </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">MAIN NAVIGATION</li>
+                <!--<li><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>-->
+                <li th:class="${activeFormRequest}"><a th:href="@{form-request-cabang}"><i class="fa fa-fw fa-pencil-square-o"></i> <span>Request ATK dan Printing</span></a></li>
+                <li th:class="${activeListRequest}"><a th:href="@{list-request-cabang}"><i class="fa fa-fw fa-list-alt"></i> <span>List Request ATK dan Printing</span></a></li>
+                <li th:class="${activeStockCabang}"><a th:href="@{stock-cabang}"><i class="fa fa-fw fa-file-text-o"></i> <span>Laporan Stock ATK dan<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Barang Cetakan</span></a></li>
+                <li th:class="${activeChecklistPenerimaanCabang}"><a th:href="@{checklist-penerimaan-cabang}"><i class="fa fa-fw fa-check-square-o"></i> <span>Checklist Penerimaan Stock</span></a></li>
+                <li th:class="${activeformPengambilanCabang}"><a th:href="@{form-pengambilan-cabang}"><i class="fa fa-fw fa-sign-in"></i> <span>Pengambilan ATK dan Printing</span></a></li>
+                <!--<li class="header">LABELS</li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>-->
+                <!--<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>-->
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+</body>
+</html>

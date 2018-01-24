@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+<head>
+    <title>Agent List</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Agent
+            <small>List</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Agent List</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Main row -->
+        <div class="row">
+            <!-- right col -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Agent List</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="agentList" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Code</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+<section layout:fragment="body-end">
+
+    <script src="/assets/template/components/datatables.net/js/jquery.dataTables.min.js" th:src="@{/assets/template/components/datatables.net/js/jquery.dataTables.min.js}"></script>
+    <script type="application/javascript">
+    <!--
+        $(document).ready( function () {
+            alert(1);
+            /*
+            var agentList = $('#agentList').DataTable({
+                ajax: {
+                    url : "/api/agent/list",
+                    dataSrc : ""
+                },
+                "sAjaxDataProp": "",
+                "order": [[ 0, "asc" ]],
+                "columns": [
+                    { data: 'id' },
+                    { data: 'code' },
+                    { data: 'name' },
+                    { data: 'status' },
+                    {"mRender": function ( data, type, row ) {
+                        return '<a href=add.html?id='+row.id+'>Edit</a>';}
+                    }
+                ]
+            });
+            */
+            var table = $('#agentList').DataTable({
+                "sAjaxSource": "/employees",
+                "sAjaxDataProp": "",
+                "order": [[ 0, "asc" ]],
+                "aoColumns": [
+                    { "mData": "id"},
+                    { "mData": "name" },
+                    { "mData": "lastName" },
+                    { "mData": "email" },
+                    { "mData": "phone" },
+                    { "mData": "active" }
+                ]
+            })
+        });
+    -->
+    </script>
+</section>
+
+</body>
+</html>
+
+
+

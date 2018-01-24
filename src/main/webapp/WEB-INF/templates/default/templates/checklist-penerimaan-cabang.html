@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-cabang">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            List Request ATK Cabang Jakarta
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll" /> Check All</th>
+                                <th>No</th>
+                                <th>Id Barang</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><input type="checkbox" id="1" /></td>
+                                <td>1</td>
+                                <td>BC0001</td>
+                                <td>Aplikasi Tabungan</td>
+                                <td>1500</td>
+                                <td>600/lembar</td>
+                                <td>900000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="2" /></td>
+                                <td>2</td>
+                                <td>BC0002</td>
+                                <td>Slip Penarikan</td>
+                                <td>20</td>
+                                <td>16.500/buku</td>
+                                <td>330000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="3" /></td>
+                                <td>3</td>
+                                <td>BC0003</td>
+                                <td>Slip Setoran</td>
+                                <td>20</td>
+                                <td>16.500/buku</td>
+                                <td>330000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="4" /></td>
+                                <td>4</td>
+                                <td>BC0004</td>
+                                <td>Aplikasi Pemindahbukuan</td>
+                                <td>20</td>
+                                <td>8.500/buku</td>
+                                <td>170000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="5" /></td>
+                                <td>5</td>
+                                <td>BC0005</td>
+                                <td>Aplikasi Transfer</td>
+                                <td>10</td>
+                                <td>14000/buku</td>
+                                <td>140000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="6" /></td>
+                                <td>6</td>
+                                <td>BC0006</td>
+                                <td>Form Aplikasi Kredit Pensiunan</td>
+                                <td>500</td>
+                                <td>950/lembar</td>
+                                <td>475000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="7" /></td>
+                                <td>7</td>
+                                <td>BC0007</td>
+                                <td>Form Aplikasi Kredit Pensiunan Serba Mantap</td>
+                                <td>500</td>
+                                <td>950/lembar</td>
+                                <td>475000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="8" /></td>
+                                <td>8</td>
+                                <td>BC0008</td>
+                                <td>Form Aplikasi Kredit Mikro</td>
+                                <td>200</td>
+                                <td>950/lembar</td>
+                                <td>190000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="9" /></td>
+                                <td>9</td>
+                                <td>BC0009</td>
+                                <td>Form Aplikasi Kredit Retail</td>
+                                <td>100</td>
+                                <td>950/lembar</td>
+                                <td>95000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="10" /></td>
+                                <td>10</td>
+                                <td>BC0010</td>
+                                <td>Broaur Tabungan Si Mantap Berjangka</td>
+                                <td>100</td>
+                                <td>350/lembar</td>
+                                <td>5000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="11" /></td>
+                                <td>11</td>
+                                <td>BC0011</td>
+                                <td>Broaur Pensiunan</td>
+                                <td>500</td>
+                                <td>350/lembar</td>
+                                <td>175000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="12" /></td>
+                                <td>12</td>
+                                <td>BC0012</td>
+                                <td>Broaur Serbaguna Mantap</td>
+                                <td>100</td>
+                                <td>350/lembar</td>
+                                <td>5000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="13" /></td>
+                                <td>13</td>
+                                <td>BC0013</td>
+                                <td>Kertas Kop Hal 1 dan 2</td>
+                                <td>4</td>
+                                <td>270/lembar</td>
+                                <td>1080000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="14" /></td>
+                                <td>14</td>
+                                <td>BC0014</td>
+                                <td>Buku Tabungan Tabunganku No 124026-124925</td>
+                                <td>500</td>
+                                <td>4.500/buku</td>
+                                <td>2250000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="15" /></td>
+                                <td>15</td>
+                                <td>BC0015</td>
+                                <td>Buku Tabungan Simanatap Gold No 124351-214850</td>
+                                <td>500</td>
+                                <td>3.800/buku</td>
+                                <td>2900000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="16" /></td>
+                                <td>16</td>
+                                <td>BC0016</td>
+                                <td>Buku Tabungan Simanatap Pensiunan No 94351-94850</td>
+                                <td>500</td>
+                                <td>3.800/buku</td>
+                                <td>1900000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="17" /></td>
+                                <td>17/td></td>
+                                <td>BC0017</td>
+                                <td>X-Benner Pensiunan</td>
+                                <td>1</td>
+                                <td>50000/biji</td>
+                                <td>50000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="18" /></td>
+                                <td>18</td>
+                                <td>BC0018</td>
+                                <td>X-Benner Kredit Serba Guna Mantap</td>
+                                <td>1</td>
+                                <td>50000/biji</td>
+                                <td>50000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="19" /></td>
+                                <td>19</td>
+                                <td>BC0019</td>
+                                <td>Aplikasi Tsb</td>
+                                <td>1000</td>
+                                <td>600/lembar</td>
+                                <td>600000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="20" /></td>
+                                <td>20</td>
+                                <td>BC0020</td>
+                                <td>Amplop Kaca Bank Mantap</td>
+                                <td>1</td>
+                                <td>125000/box</td>
+                                <td>125000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="21" /></td>
+                                <td>21</td>
+                                <td>BC0021</td>
+                                <td>Amplop Non Kaca Bank Mantap</td>
+                                <td>1</td>
+                                <td>125000/box</td>
+                                <td>125000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="22" /></td>
+                                <td>22</td>
+                                <td>BC0022</td>
+                                <td>Denominasi</td>
+                                <td>20</td>
+                                <td>25000/buku</td>
+                                <td>500000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="23" /></td>
+                                <td>23</td>
+                                <td>BC0023</td>
+                                <td>Aplikasi Umum</td>
+                                <td>10</td>
+                                <td>16.500/buku</td>
+                                <td>165000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="24" /></td>
+                                <td>24</td>
+                                <td>BC0024</td>
+                                <td>Kwitansi Biaya</td>
+                                <td>10</td>
+                                <td>20000/buku</td>
+                                <td>200000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="25" /></td>
+                                <td>25</td>
+                                <td>BC0025</td>
+                                <td>Spectroline</td>
+                                <td>2</td>
+                                <td>105000/kotak</td>
+                                <td>210000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="26" /></td>
+                                <td>26</td>
+                                <td>BC0026</td>
+                                <td>Tali Uang 1000</td>
+                                <td>500</td>
+                                <td>100/lembar</td>
+                                <td>50000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="27" /></td>
+                                <td>27</td>
+                                <td>BC0027</td>
+                                <td>Tali Uang 2 ribu</td>
+                                <td>1000</td>
+                                <td>100/lembar</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="28" /></td>
+                                <td>28</td>
+                                <td>BC0028</td>
+                                <td>Tali Uang 5 ribu</td>
+                                <td>400</td>
+                                <td>100/lembar</td>
+                                <td>40000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="29" /></td>
+                                <td>29</td>
+                                <td>BC0029</td>
+                                <td>Tali Uang 10 ribu</td>
+                                <td>1000</td>
+                                <td>100/lembar</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="30" /></td>
+                                <td>30</td>
+                                <td>BC0030</td>
+                                <td>Tali Uang 20 ribu</td>
+                                <td>1000</td>
+                                <td>100/lembar</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="31" /></td>
+                                <td>31</td>
+                                <td>BC0031</td>
+                                <td>Tali Uang 50 ribu</td>
+                                <td>1000</td>
+                                <td>100/lembar</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="32" /></td>
+                                <td>32</td>
+                                <td>BC0032</td>
+                                <td>Tali Uang 100 ribu</td>
+                                <td>1000</td>
+                                <td>100/lembar</td>
+                                <td>100000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="33" /></td>
+                                <td>33</td>
+                                <td>BC0033</td>
+                                <td>Bilyet Tsb No. 45001-48250</td>
+                                <td>5</td>
+                                <td>50000/buku</td>
+                                <td>250000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="34" /></td>
+                                <td>34</td>
+                                <td>BC0034</td>
+                                <td>Stampel Operational</td>
+                                <td>18</td>
+                                <td>1.140.000/box</td>
+                                <td>20520000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="35" /></td>
+                                <td>35</td>
+                                <td>BC0035</td>
+                                <td>Map Putih</td>
+                                <td>100</td>
+                                <td>3.500/lembar</td>
+                                <td>350000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="36" /></td>
+                                <td>36</td>
+                                <td>BC0036</td>
+                                <td>Map Pensiunan</td>
+                                <td>100</td>
+                                <td>7.500/lembar</td>
+                                <td>750000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="37" /></td>
+                                <td>37</td>
+                                <td>BC0037</td>
+                                <td>Map Kuning Bank Mantap</td>
+                                <td>100</td>
+                                <td>5.355/lembar</td>
+                                <td>535500</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="38" /></td>
+                                <td>38</td>
+                                <td>BC0038</td>
+                                <td>Amplop Surat Coklat Besar</td>
+                                <td>50</td>
+                                <td>3.200/lembar</td>
+                                <td>160000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="39" /></td>
+                                <td>39</td>
+                                <td>BC0039</td>
+                                <td>Amplop Pensiunan</td>
+                                <td>100</td>
+                                <td>3.500/lembar</td>
+                                <td>350000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="40" /></td>
+                                <td>40</td>
+                                <td>BC0040</td>
+                                <td>Obligo Biaya</td>
+                                <td>100</td>
+                                <td>750/lembar</td>
+                                <td>75000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="41" /></td>
+                                <td>41</td>
+                                <td>BC0041</td>
+                                <td>Aplikasi U</td>
+                                <td>10</td>
+                                <td>22.500/lembar</td>
+                                <td>225000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="42" /></td>
+                                <td>42</td>
+                                <td>BC0042</td>
+                                <td>Aplikasi Keluhan Nasabah</td>
+                                <td>2</td>
+                                <td>2000/buku</td>
+                                <td>4000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="43" /></td>
+                                <td>43</td>
+                                <td>BC0043</td>
+                                <td>Plastic Deposito</td>
+                                <td>50</td>
+                                <td>700/buku</td>
+                                <td>35000</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" id="44" /></td>
+                                <td>44</td>
+                                <td>BC0044</td>
+                                <td>Kwitansi Pembayaran Pensiunan</td>
+                                <td>1</td>
+                                <td>105.750/buku</td>
+                                <td>105750</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Total Harga</th>
+                                <th><span id="myspan"></span></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- /.box-body -->
+                </div>
+                <div class="col-sm-12">
+                    <a th:href="@{form-request-cabang}" type="Submit" class="btn btn-info pull-right" id="checklistBarangCabang" >Submit</a>
+                </div>
+                <!--
+
+                             <div class="col-sm-8">
+                                        <a href="index.html" type="button" class="btn btn-info " id="addDataBarang" >Reject</a>
+                                        <a type="button" class="btn btn-info " id="cheklistBarang" >Submit</a>
+                                    </div> -->
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+<script src="plugins/sum().js"></script>
+<script>
+    $(function() {
+        var table = $('#tableBarang').DataTable();
+        var sumHarga =table.column(6).data().sum();
+//        alert(sumHarga);
+        document.getElementById("myspan").textContent=sumHarga;
+        $('#tableBarang').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+<script>
+
+    $('#selectAll').click(function (e) {
+        $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+    });
+</script>
+
+
+

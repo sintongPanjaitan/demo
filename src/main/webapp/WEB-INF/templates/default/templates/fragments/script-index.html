@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<section layout:fragment="script">
+    <script th:src="@{/assets/template/components/jquery/jquery.min.js}"></script><br></br>
+    <!--<script th:src="@{/assets/template/components/jquery/jquery.js}"></script><br></br>-->
+    <!-- jQuery UI 1.11.4 -->
+    <!--<script th:src="@{/assets/template/components/jquery-ui/jquery-ui.min.js}"></script><br></br>-->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!--<script>-->
+        <!--$.widget.bridge('uibutton', $.ui.button);-->
+    <!--</script><br/>-->
+    <!-- Bootstrap 3.3.7 -->
+    <script th:src="@{/assets/template/components/bootstrap/js/bootstrap.min.js}"></script><br></br>
+    <!-- Morris.js charts -->
+    <!--<script th:src="@{/assets/template/components/raphael/raphael.min.js}"></script><br></br>-->
+    <!--<script th:src="@{/assets/template/components/morris.js/morris.min.js}"></script>-->
+    <!-- Sparkline -->
+    <!--<script th:src="@{/assets/template/components/jquery-sparkline/jquery.sparkline.min.js}"></script><br/>-->
+    <!-- jvectormap -->
+    <!--<script th:src="@{/assets/template/components/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script><br/>-->
+    <!--<script th:src="@{/assets/template/components/jvectormap/jquery-jvectormap-world-mill-en.js}"></script><br/>-->
+    <!-- jQuery Knob Chart -->
+    <!--<script th:src="@{/assets/template/components/jquery-knob/jquery.knob.min.js}"></script><br/>-->
+    <!-- daterangepicker -->
+    <!--<script th:src="@{/assets/template/components/moment/min/moment.min.js}"></script><br/>-->
+    <!--<script th:src="@{/assets/template/components/bootstrap-daterangepicker/daterangepicker.js}"></script><br/>-->
+    <!-- datepicker -->
+    <script th:src="@{/assets/template/components/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script><br/>
+    <!-- Bootstrap WYSIHTML5 -->
+    <!--<script th:src="@{/assets/template/components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script><br/>-->
+
+
+    <!--&lt;!&ndash; AdminLTE dashboard demo (This is only for demo purposes) &ndash;&gt;-->
+    <!--<script th:src="@{/assets/template/js/pages/dashboard.js}"></script><br/>-->
+
+
+
+    <!-- datatables.net -->
+
+    <script th:src="@{/assets/template/components/datatables.net/js/jquery.dataTables.js}"></script><br/>
+    <script th:src="@{/assets/template/components/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script><br/>
+    <!--<script th:src="@{/assets/template/components/datatables.net/js/jquery-1.12.4.js}"></script><br/>-->
+    <!--<script th:src="@{/assets/template/components/jquery-slimscroll/jquery.slimscroll.min.js}"></script><br/>-->
+    <!-- Slimscroll -->
+    <script th:src="@{/assets/template/components/jquery-slimscroll/jquery.slimscroll.min.js}"></script><br/>
+    <!-- FastClick -->
+    <script th:src="@{/assets/template/components/fastclick/lib/fastclick.js}"></script><br/>
+    <!--Sweet ALert-->
+    <script th:src="@{/assets/template/components/sweetalert/sweetalert.min.js}"></script><br/>
+    <!-- ChartJS -->
+    <!--<script th:src="@{/assets/template/components/chart.js/Chart.js}"></script><br/>-->
+    <!-- AdminLTE App -->
+    <script th:src="@{/assets/template/js/adminlte.min.js}"></script><br/>
+    <!-- AdminLTE for demo purposes -->
+    <script th:src="@{/assets/template/js/demo.js}"></script><br/>
+
+    <!--<script th:src="@{/assets/template/components/Flot/jquery.flot.js}"></script><br/>-->
+    <!--&lt;!&ndash; FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized &ndash;&gt;-->
+    <!--<script th:src="@{/assets/template/components/Flot/jquery.flot.resize.js}"></script><br/>-->
+    <!--&lt;!&ndash; FLOT PIE PLUGIN - also used to draw donut charts &ndash;&gt;-->
+    <!--<script th:src="@{/assets/template/components/Flot/jquery.flot.pie.js}"></script><br/>-->
+    <!--&lt;!&ndash; FLOT CATEGORIES PLUGIN - Used to draw bar charts &ndash;&gt;-->
+    <!--<script th:src="@{/assets/template/components/Flot/jquery.flot.categories.js}"></script><br/>-->
+
+
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--/* ChartJS-->
+             <!--* -&#45;&#45;&#45;&#45;&#45;&#45;-->
+             <!--* Here we will create a few charts using ChartJS-->
+             <!--*/-->
+
+            <!--//&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+            <!--//- AREA CHART - -->
+            <!--//&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+            <!--var areaChartData = {-->
+                <!--labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],-->
+                <!--datasets: [-->
+                    <!--{-->
+                        <!--label               : 'Electronics',-->
+                        <!--fillColor           : 'rgba(210, 214, 222, 1)',-->
+                        <!--strokeColor         : 'rgba(210, 214, 222, 1)',-->
+                        <!--pointColor          : 'rgba(210, 214, 222, 1)',-->
+                        <!--pointStrokeColor    : '#c1c7d1',-->
+                        <!--pointHighlightFill  : '#fff',-->
+                        <!--pointHighlightStroke: 'rgba(220,220,220,1)',-->
+                        <!--data                : [65, 59, 80, 81, 56, 55, 40]-->
+                    <!--},-->
+                    <!--{-->
+                        <!--label               : 'Digital Goods',-->
+                        <!--fillColor           : 'rgba(60,141,188,0.9)',-->
+                        <!--strokeColor         : 'rgba(60,141,188,0.8)',-->
+                        <!--pointColor          : '#3b8bba',-->
+                        <!--pointStrokeColor    : 'rgba(60,141,188,1)',-->
+                        <!--pointHighlightFill  : '#fff',-->
+                        <!--pointHighlightStroke: 'rgba(60,141,188,1)',-->
+                        <!--data                : [28, 48, 40, 19, 86, 27, 90]-->
+                    <!--}-->
+                <!--]-->
+            <!--}-->
+            /*
+         * DONUT CHART
+         * -----------
+         */
+
+<!--//            var donutData = [-->
+<!--//                { label: 'Not Yet<br></br> Absent', data: 50, color: '#3c8dbc' },-->
+<!--//                { label: 'Already<br></br> Absent', data: 50, color: '#0073b7' }-->
+<!--//-->
+<!--//            ]-->
+<!--//            $.plot('#donut-chart', donutData, {-->
+<!--//                series: {-->
+<!--//                    pie: {-->
+<!--//                        show       : true,-->
+<!--//                        radius     : 1,-->
+<!--//                        innerRadius: 0.5,-->
+<!--//                        label      : {-->
+<!--//                            show     : true,-->
+<!--//                            radius   : 2 / 3,-->
+<!--//                            formatter: labelFormatter,-->
+<!--//                            threshold: 0.1-->
+<!--//                        }-->
+<!--//-->
+<!--//                    }-->
+<!--//                },-->
+<!--//                legend: {-->
+<!--//                    show: false-->
+<!--//                }-->
+<!--//            })-->
+            <!--/*-->
+             <!--* END DONUT CHART-->
+             <!--*/-->
+
+
+
+            <!--//-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+            <!--//- BAR CHART - -->
+            <!--//-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--//            var barChartCanvas                   = $('#barChart').get(0).getContext('2d')-->
+<!--//            var barChart                         = new Chart(barChartCanvas)-->
+<!--//            var barChartData                     = areaChartData-->
+<!--//            barChartData.datasets[1].fillColor   = '#00a65a'-->
+<!--//            barChartData.datasets[1].strokeColor = '#00a65a'-->
+<!--//            barChartData.datasets[1].pointColor  = '#00a65a'-->
+<!--//            var barChartOptions                  = {-->
+<!--//                //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value-->
+<!--//                scaleBeginAtZero        : true,-->
+<!--//                //Boolean - Whether grid lines are shown across the chart-->
+<!--//                scaleShowGridLines      : true,-->
+<!--//                //String - Colour of the grid lines-->
+<!--//                scaleGridLineColor      : 'rgba(0,0,0,.05)',-->
+<!--//                //Number - Width of the grid lines-->
+<!--//                scaleGridLineWidth      : 1,-->
+<!--//                //Boolean - Whether to show horizontal lines (except X axis)-->
+<!--//                scaleShowHorizontalLines: true,-->
+<!--//                //Boolean - Whether to show vertical lines (except Y axis)-->
+<!--//                scaleShowVerticalLines  : true,-->
+<!--//                //Boolean - If there is a stroke on each bar-->
+<!--//                barShowStroke           : true,-->
+<!--//                //Number - Pixel width of the bar stroke-->
+<!--//                barStrokeWidth          : 2,-->
+<!--//                //Number - Spacing between each of the X value sets-->
+<!--//                barValueSpacing         : 5,-->
+<!--//                //Number - Spacing between data sets within X values-->
+<!--//                barDatasetSpacing       : 1,-->
+<!--//                //String - A legend template-->
+<!--//                //Boolean - whether to make the chart responsive-->
+<!--//                responsive              : true,-->
+<!--//                maintainAspectRatio     : true-->
+<!--//            }-->
+
+            <!--barChartOptions.datasetFill = false-->
+            <!--barChart.Bar(barChartData, barChartOptions)-->
+        <!--})-->
+
+        <!--function labelFormatter(label, series) {-->
+            <!--return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'-->
+                <!--+ label-->
+                <!--+ '<br></br>'-->
+                <!--+ Math.round(series.percent) + '%</div>'-->
+        <!--}-->
+
+        <!--$(function () {-->
+            <!--//Initialize Select2 Elements-->
+            <!--//Date picker-->
+            <!--$('#datepicker').datepicker({-->
+                <!--autoclose: true-->
+            <!--})-->
+            <!--$('#datepicker1').datepicker({-->
+                <!--autoclose: true-->
+            <!--})-->
+        <!--})-->
+    <!--</script>-->
+
+</section>
+</body>
+</html>

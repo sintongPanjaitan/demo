@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default-cabang">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<section layout:fragment="content-header">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Form Request ATK dan Printing
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Tables</a></li>
+            <li class="active">Data tables</li>
+        </ol>
+    </section>
+</section>
+
+<section layout:fragment="content">
+    <!-- Main content -->
+    <section class="content">
+
+        <form class="form-horizontal">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputNamaBarang" class="col-sm-2 control-label">Nama Barang</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" list="listNamaBarang" id="inputNamaBarang" name="inputNamaBarang" placeholder="Nama Barang" value="" />
+                        <datalist id="listNamaBarang">
+                            <option value="Map Putih" >K1</option>
+                            <option value="Stampel Operational" >K2</option>
+                            <option value="Amplop Pensiunan" >K3</option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputJumlahBarang" class="col-sm-2 control-label">Jumlah Barang</label>
+                    <div class="col-sm-7">
+                        <input type="number" class="form-control" list="listJumlahBarang" id="inputJumlahBarang" name="inputJumlahBarang" placeholder="Jumlah Barang" value="" />
+                        <datalist id="listJumlahBarang">
+                            <option value="5" />
+                            <option value="10" />
+                            <option value="15" />
+                        </datalist>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.box-footer -->
+        </form>
+
+        <div class="col-sm-9">
+            <button class="btn btn-info pull-right" id="addDataBarang" >Add</button>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <form th:action="@{form-request-cabang}" method="post">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                    <div class="box-header">
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="tableBarang" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Barang</th>
+                                <th>Jumlah</th>
+                                <th>Harga Satuan</th>
+                                <th>Total Harga</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>Stampel Operational</td>
+                                <td>5</td>
+                            </tr> -->
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Total Harga</th>
+                                <th><span id="myspan"></span></th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Pilih Anggaran</label>
+                    <div class="col-sm-7">
+                        <select id="anggaran" name="anggaran" class="form-control select2" style="width: 100%;" onclick="actionSubmit()">
+                            <option value="0" selected="selected">Select Type Anggaran</option>
+                            <option value="Anggaran 1">Anggaran 1</option>
+                            <option value="Anggaran 2">Anggaran 2</option>
+                            <option value="Anggaran 3">Anggaran 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br/>
+                <br/>
+                <div class="col-sm-9">
+                    <input type="text" hidden="true" name="namaBarang" id="namaBarang" />
+                    <input type="text" hidden="true" name="jumlah" id="jumlah" />
+                    <input type="Submit" class="btn btn-info pull-right" id="submitDataBarang" >Submit</input>
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        </form>
+        <!-- /.row -->
+    </section>
+</section>
+<footer>
+    <p layout:fragment="custom-footer">This is some footer content from content page 1</p>
+</footer>
+
+</body>
+</html>
+<script th:src="@{/plugins/sum().js}"></script>
+<script>
+    $(function() {
+        $('#tableBarang').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+
+//        var jenisAnggaran = document.getElementById("anggaran").selectedIndex;
+//        var submitDisabled = document.getElementById("submitDataBarang").disabled=true;
+//        if (jenisAnggaran==0){
+//            document.getElementById("submitDataBarang").disabled = true;;
+//        }
+        var submitDisabled = document.getElementById("submitDataBarang").className="btn btn-info pull-right disabled";
+
+        var counter = 1;
+
+        $('#addDataBarang').on( 'click', function () {
+            var inputNamaBarang = document.getElementById("inputNamaBarang").value;
+            var inputJumlahBarang = document.getElementById("inputJumlahBarang").value;
+            var hargaSatuan = '100/lembar';
+            var totalHarga = inputJumlahBarang*100;
+            // console.log("totalHarga "+2*2);
+            var t = $('#tableBarang').DataTable();
+            t.row.add( [
+                counter   ,
+                inputNamaBarang,
+                inputJumlahBarang,
+                hargaSatuan,
+                totalHarga,
+                '<input type="button" value="x" onclick="deleteRow()" id="'+(counter-1)+'" />'
+            ] ).draw( false );
+            counter++;
+            var sumHarga =t.column(4).data().sum();
+            document.getElementById("inputNamaBarang").value="";
+            document.getElementById("inputJumlahBarang").value="";
+            document.getElementById("myspan").textContent=sumHarga;
+            counter++;
+
+            var namaBarang = t
+                .columns( 1 )
+                .data()
+                .eq( 0 )      // Reduce the 2D array into a 1D array of data
+                .sort()       // Sort data alphabetically
+                .unique()     // Reduce to unique values
+                .join( ',' );
+            document.getElementById("namaBarang").value=namaBarang;
+
+            var jumlah = t
+                .columns( 2 )
+                .data()
+                .eq( 0 )      // Reduce the 2D array into a 1D array of data
+                .sort()       // Sort data alphabetically
+                .unique()     // Reduce to unique values
+                .join( ',' );
+            document.getElementById("jumlah").value=jumlah;
+
+
+        } );
+
+    } );
+</script>
+<script>
+    function deleteRow() {
+        var table = $('#tableBarang').DataTable();
+        $('#tableBarang tbody').one( 'click', 'tr', function () {
+            table.row(table.row( this ).index()).remove().draw( false );
+            var sumHarga =table.column(4).data().sum();
+            document.getElementById("myspan").textContent=sumHarga;
+        } );
+    }
+
+</script>
+<script>
+    function actionSubmit(){
+        /*<![CDATA[*/
+
+        var table = $('#tableBarang').DataTable();
+        var length = table.column().data().length;
+        var jenisAnggaran = document.getElementById("anggaran").selectedIndex;//selectedIndex
+        if (length != 0  && jenisAnggaran != 0) {
+            var submitDisabled = document.getElementById("submitDataBarang").className="btn btn-info pull-right ";//
+        }
+    }
+    /*]]>*/
+</script>
+<!--<script>-->
+    <!--var t = $('#tableBarang').DataTable();-->
+   <!---->
+<!--</script>-->
+
+
+

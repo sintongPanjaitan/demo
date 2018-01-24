@@ -1,0 +1,3 @@
+/*
+template default js index.js
+ */
